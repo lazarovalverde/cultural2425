@@ -1,0 +1,283 @@
+/*En primer lugar, hago un reset de las cajas en CSS*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*En segundo lugar, se definen propiedades generales de texto*/
+strong {
+    font-weight: bold;
+}
+.subrayado {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+em {
+    font-style: italic; 
+}
+.normal-sincursiva{
+    font-style: normal;
+}
+
+/*He puesto span en lugar de blockquote puesto que metía salto de línea*/
+  span.blockquote::before {
+    content: "«";
+  }
+  
+  span.blockquote::after {
+    content: "»";
+  }
+  span.cita::before, span.cita::after{
+    content: "—";
+  }
+
+.text--orange {
+    color: rgb(204, 81, 32);
+}
+/* Se definen algunos componentes, como, por ejemplo, enlaces */
+a {
+    text-decoration: none;
+    color: rgb(204, 81, 32);
+}
+a:hover{
+    text-decoration: underline;
+    color: rgba(204, 81, 32,0.5);
+}
+.link-icon::after, .link-icon:hover::after{
+    content: ' ';
+    display: inline-block;
+    width: 0.8rem; 
+    height: 0.8rem;
+    margin: 0 2px; 
+    background-image: url("../img/external-link.svg"); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.link-icon:hover::after{
+    background-image: url("../img/external-link-modif.svg"); 
+}
+.dm-serif-text-regular {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -2px;
+  }
+
+/*Empezamos a maquetar la estructura, de lo más general, a lo particular y de arriba a abajo*/
+body{
+    margin: 0 auto;
+    color: rgb(37,36,34);
+    background-color: rgb(245,246,240);
+    font-size: 18px;
+    line-height: 1.7rem ;
+    font-family: Georgia,'Times New Roman', serif;
+}
+/*La cabecera o sección con el título de la web y los enlaces*/
+header {
+    text-align: center;
+    font-family: Helvetica,Arial, sans-serif;
+}
+header h1 {
+    margin: 2rem auto;
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.menu ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.menu ul a {
+    color:black;
+}
+.menu ul a.pagina_actual{
+    color: rgba(204, 81, 32,0.5);
+}
+figure {
+    margin: 1rem;
+}
+figcaption {
+    font-size: 0.8rem;
+}
+/*Definimos las generalidades de la parte principal de contenidos, la cual está dividida en tres secciones y cada una en diversos artículos, con un encabezado, cuerpo de texto y algún elemento multimedia*/
+.container {
+     margin: 16px auto;
+     width: 95%;
+     max-width: 850px;
+}
+/* INDEX.HTML - SELECTORES GENERALES*/
+main h1 {
+    font-size: 2.2rem;
+    line-height: 2.2rem ;
+    margin:36px 0;
+    font-family: Helvetica,Arial, sans-serif;
+}
+main h2 {
+    font-size: 2.2rem;
+    line-height: 2.2rem ;
+    margin:36px 0;
+    font-family: Helvetica,Arial, sans-serif;
+}
+main iframe{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+main section article p{
+margin-top: 1rem;
+}
+main h2.titulo-pagina {
+    text-align: center;
+    font-size: 4rem;
+    line-height: 3.4rem ;
+    margin:3rem
+}
+
+
+/* INDEX.HTML Maquetamos la primera sección "portada"*/
+
+section#portada #intro {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+
+section#portada div {
+    margin: 1.5rem 0 ;
+    font-family: Helvetica,Arial, sans-serif;
+    text-align: center;
+
+}
+section#portada p#autor{
+    font-size: 1.3rem;
+    color: rgb(204, 81, 32);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    
+}
+section#portada div p#fecha{
+     font-size: 1rem;
+     color:black;
+     font-weight: bold ;
+     text-transform: uppercase;
+     margin-top: 0rem;
+}
+section#portada figure {
+    margin: 1rem 0;
+}
+section#portada figcaption {
+    text-align: left;
+}
+section#portada p#descripcion{
+      text-align: left;
+      margin: 1rem 0 0 6rem;
+      font-size: 1.3rem;
+}
+/*Maquetamos el recuadro de texto con un cita*/
+main section article #recuadro {
+    margin: auto 140px;
+}
+main section article p#recuadro-contenido {
+    border-width: 1px 4px 1px 4px;
+    border-style: solid;
+    border-color: black;
+    padding: 2rem 2.5rem;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+main section article #recuadro-autor {
+    margin:0;
+    font-weight: bold;
+    
+}
+/* INDEX.HTML - Maquetamos ultima sección*/
+section#autoria article{
+    margin: 2rem auto;
+    text-align: center;
+    line-height: 1rem;
+    font-family: 'Helvetica','Arial', sans-serif;
+}
+section#autoria article img {
+    border-radius: 150px;
+}
+section#autoria article p:first-of-type {
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
+
+/* PROGRAMACIÓN.HTML - Maquetamos ultima sección*/
+
+.lista-ordenada{
+    text-align: left;
+    margin: 1.4rem 6rem;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+.lista-desordenada{
+    list-style-type: none;
+    margin-left:6rem;
+    font-size: 1.1rem;
+}
+.lista-museum {
+    list-style-image:url("../img/icon-museum.svg");
+}
+.lista-calendar{
+    list-style-image:url("../img/icon-calendar.svg");
+}
+.lista-web-link{
+    list-style-image:url("../img/icon-web-link.svg");
+}
+
+
+/* museos.HTML */
+/* museos.html - Maquetamos los artículos*/
+#principal-museos,#referencias{
+    margin: 2rem auto
+}
+
+
+dl.museo dt {
+    font-size: 1.8rem;
+    margin: 1rem auto;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}
+
+dl.museo p{
+    margin: 1rem 3rem;
+}
+dl.museo ul {
+    margin-left: 3rem;
+    list-style-position: inside;
+    font-size: 0.9rem;
+    list-style-type: square;
+    line-height: 1.4rem;
+}
+dl.museo figure{
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 1.4rem auto
+}
+
+#referencias p{
+    font-size: 0.8rem;
+}
+
+footer{
+   font-family: Helvetica,Arial, sans-serif;
+   text-align: center;
+   padding: 2em;
+   width: 100%;
+   background-color: rgb(204, 81, 32);
+   color: rgb(245,246,240);
+}
